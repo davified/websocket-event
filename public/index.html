@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Event App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    media="screen" title="no title">
+    <link rel="stylesheet" href="/style.css" media="screen" title="no title">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="userFormArea" class="row">
+        <div class="col-md-12">
+          <h1 class="center">Plannr</h1>
+          <p class="center">Plan events with your friend realtime<p>
+          <form id="userForm" class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <label>Enter Username</label>
+              <input class="form-control" id="username"></input>
+              <br />
+              <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="messageArea" class="row">
+        <div class="col-md-4">
+          <div class="well">
+            <h3>Online Users</h3>
+            <ul class="list-group" id="users"></ul>
+          </div>
+          <div class="chat" id="chat"></div>
+          <form id="messageForm">
+            <div class="form-group">
+              <label>Enter Message</label>
+              <textarea class="form-control" id="message"></textarea>
+              <br />
+              <input type="submit" class="btn btn-primary" value="Send Message">
+            </div>
+          </form>
+        </div>
+        <div class="col-md-8">
+          <div id="floating-panel">
+            <input id="address" type="textbox" value="Singapore">
+            <input id="submit" type="button" value="Geocode" class="btn btn-default">
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAArVUCVVK1V9HDNS21cV28Oc3tmkb-550
+    &callback=initMap" type="text/javascript">
+    </script>
+  </body>
+</html>

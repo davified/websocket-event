@@ -1,0 +1,47 @@
+body{
+  margin-top: 30px;
+  font-family: sans-serif;
+}
+
+#messageArea{
+  display:none;
+}
+
+#userForm {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+#userFormArea {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  margin-top: 100px;
+  font-size: 70px;
+}
+
+.center {
+  text-align: center;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#map {
+ height: 400px;
+ width: 100%;
+ background: black;
+}

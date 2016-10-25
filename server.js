@@ -5,11 +5,13 @@ var io = require('socket.io').listen(server);
 users = [];
 connections = [];
 
+app.use(express.static(__dirname + '/public/'));
+
 server.listen(process.env.PORT || 3000);
 console.log("server running on port 3000")
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html')
+  res.render('index')
 })
 
 io.sockets.on('connection', function(socket){
@@ -24,7 +26,7 @@ io.sockets.on('connection', function(socket){
   });
 
 
-  //send message
+  //Send message
 
   socket.on('send message', function(data) {
          console.log(data);
