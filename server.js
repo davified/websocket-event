@@ -39,9 +39,15 @@ io.sockets.on('connection', function(socket){
     socket.username = data;
     users.push(socket.username);
     updateUsernames();
-  })
+  });
 
   function updateUsernames(){
     io.sockets.emit('get users', users);
   }
+
+  //Send event
+  socket.on('send event', function(data) {
+    console.log(data);
+    io.sockets.emit('new event', {event: data});
+  });
 });
