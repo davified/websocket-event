@@ -50,4 +50,9 @@ io.sockets.on('connection', function(socket){
     console.log(data);
     io.sockets.emit('new event', {event: data});
   });
+
+  socket.on('send icon', function(data){
+    console.log("data send ", data);
+    io.sockets.emit('new icon', data)
+  })
 });

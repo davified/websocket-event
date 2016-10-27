@@ -1,5 +1,7 @@
+var socket = io.connect();
+
+
 $(function() {
-  var socket = io.connect();
   var $messageForm = $('#messageForm');
   var $message = $('#message');
   var $chat = $('#chat');
@@ -21,7 +23,7 @@ $(function() {
   });
 
   socket.on('new message', function(data){
-    $chat.append('<div class="well"><strong>'+data.user+'</strong>: '+data.msg+'</div>');
+    $chat.append('<li><strong>'+data.user+'</strong>: '+data.msg+'</li>');
   });
 
   $pacInputForm.submit(function(e){
@@ -32,7 +34,7 @@ $(function() {
   })
 
   socket.on('new event', function(data){
-    $eventHere.append('<p>'+data.event+'</p>')
+    $eventHere.append('<li class="vote" id="vote1">'+data.event+'</li>')
   })
 
 
@@ -60,8 +62,18 @@ $(function() {
   })
 });﻿
 
-var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var labelIndex = 0;
+
+// $('#eventHere').click(function(){
+//   console.log("clicked")
+// })
+
+// $('#eventHere').click(function(){
+//   console.log("clicked")
+// })
+
+
+// var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// var labelIndex = 0;
 
 function initAutocomplete() {
   console.log("map loaded")
@@ -98,12 +110,19 @@ function initAutocomplete() {
     if (places.length == 0) {
       return;
     }
+    console.log(markers)
+
+    socket.emit('send icon', markers);
+
+    socket.on('new icon', function(data){
+      // data.push(markers);
+    })
 
     // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+    // markers.forEach(function(marker) {
+    //   marker.setMap(null);
+    // });
+    // markers = [];
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();

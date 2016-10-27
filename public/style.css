@@ -114,3 +114,16 @@ h1 {
  -moz-animation-delay: 1.6s;
  animation-delay: 1.6s;
  }
+
+ #eventHere li:nth-child(odd) { background: #eee; }
+
+ #chat li:nth-child(odd) { background: #eee; }
+
+ ul {
+   list-style-type: none;
+   padding-left: 0;
+ }
+
+ li {
+   padding: 10px 0;
+ }
