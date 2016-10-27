@@ -5,11 +5,31 @@
     <title>Event App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     media="screen" title="no title">
-    <link rel="stylesheet" href="/style.css" media="screen" title="no title">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="leaflet.js"></script>
+    <script src="map.js"></script>
+    <link rel="stylesheet" href="/style.css" media="screen" title="no title">
+
+
   </head>
+
   <body>
+    <div id="searchBar">
+      <input type="text" id="search">
+      <button id="submit">Submit</button>
+    </div>
+    <div id="suggestionsBox">
+      <h3>Suggested places</h3>
+      <ul id="list"></ul>
+    </div>
+    <div id="mapid"></div>
+
+
+
+  </body>
+  <!-- <body>
     <div class="container-fluid">
       <div id="userFormArea" class="row">
         <div class="col-md-12">
@@ -62,5 +82,5 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAArVUCVVK1V9HDNS21cV28Oc3tmkb-550
 &libraries=places&callback=initAutocomplete"
              async defer></script>
-  </body>
+  </body> -->
 </html>
